@@ -6,19 +6,11 @@ from kivy.uix.dropdown import DropDown
 from kivy.uix.label import Label
 import subprocess
 
-def run_command_line_tool(website, hitList="checklist.txt", results="results.txt", goBusterType="gobuster_Windows_i386", type="dir"):
+def run_command_line_tool(website, hitList="checklist.txt", results="results.txt", engine="gobuster_Windows_i386", type="dir"):
     try:
-        # Construct the command
-        # scan = "ls"
-        #scan = f"./gobuster dir -u https://{website} -w ../../{hitList} -o ../../{results}"
-        #command = f"cd gobuster/{goBusterType} && {scan}"
+        # Build the command
+        command = f"./gobuster/{engine}/gobuster {type} -u https://{website} -w {hitList} -o {results}"
 
-        command = f"./gobuster/{goBusterType}/gobuster {type} -u https://{website} -w {hitList} -o {results}"
-        #command = f"cd gobuster && cd {goBusterType} && {scan}"
-        #command = [f"cd gobuster/{goBusterType} && ls -l"]
-        #command = [f"cd gobuster/{goBusterType} && ./gobuster"]
-
-        # Split the command into a list of arguments
         command_args = command
 
         # Run the command and capture the output
