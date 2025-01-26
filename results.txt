@@ -1,0 +1,5 @@
+/drive                (Status: 301) [Size: 225] [--> https://www.google.com/drive]
+/mail                 (Status: 301) [Size: 224] [--> https://www.google.com/mail]
+/photos               (Status: 301) [Size: 226] [--> https://www.google.com/photos]
+/foobar               (Status: 301) [Size: 226] [--> https://www.google.com/foobar]
+/password             (Status: 301) [Size: 228] [--> https://www.google.com/password]
