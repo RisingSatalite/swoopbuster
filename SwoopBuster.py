@@ -8,8 +8,14 @@ import subprocess
 
 def run_command_line_tool(website, hitList="checklist.txt", results="results.txt", engine="gobuster_Windows_i386", type="dir"):
     try:
+        # dns and dir have different -u u requirements
+        if(type == "dns"):
+            type == "dns u"
+        elif(type == "dir"):
+            type == "dir -u"
+
         # Build the command
-        command = f"./gobuster/{engine}/gobuster {type} -u https://{website} -w {hitList} -o {results}"
+        command = f"./gobuster/{engine}/gobuster {type} https://{website} -w {hitList} -o {results}"
 
         print(command)
         command_args = command
